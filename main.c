@@ -3,6 +3,7 @@ ENGG1003 2019 Assignment 1*/
 
 #include <stdio.h>
 #include <stdlib.h>
+   
 
 void Lowercase_Capital (char *str);
 void Encryption (char *str);
