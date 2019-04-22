@@ -71,6 +71,7 @@ int main()
     }
 
 
+/*The menu being printed for the program*/
 
     printf("****************************************************\n");
     printf("           Welcome to the Enigma Machine\n");
@@ -82,7 +83,7 @@ int main()
     printf("4) Encryption via Substitution, with key.\n");
     printf("5) Decryption via Substitution, with key.\n");
 
-    int selection;
+    int selection;                                              // Selection variable, via user input.
     do
     {
         scanf("%d", &selection);                                // Scan in an int from user as a choice.
@@ -161,7 +162,7 @@ void Lowercase_Capital (char *message)
 void Encryption_rotation (char *message, int key)
 {
     int i = 0;
-    while (message[i] != '\0')                                          // Initializing encryption loop, NULL will end the loop.
+    while (message[i] != '\0')                                              // Initializing encryption loop, NULL will end the loop.
     {
         if (message[i] >= 'A' && message[i] <= 'Z')                         // IF the string is between (inclusive) capital A and Z
         {
@@ -180,7 +181,7 @@ void Encryption_rotation (char *message, int key)
 void Decryption_rotation (char *message, int key)
 {
     int i = 0;
-    while (message[i] != '\0')                                          // Initializing encryption loop, NULL will end the loop.
+    while (message[i] != '\0')                                              // Initializing encryption loop, NULL will end the loop.
     {
         if (message[i] >= 'A' && message[i] <= 'Z')                         // IF the string is between (inclusive) capital A and Z
         {
@@ -203,11 +204,11 @@ void Encryption_substitution (char *message, char *alphabet, char *key)
 
     while (message[i] != '\0') //while the count is not NULL
     {
-        for ( count2 = 0; count2 < 26; count2++) // Comparing the letter to each position in the alphabet string.
+        for ( count2 = 0; count2 < 26; count2++)    // Comparing the letter to each position in the alphabet string.
         {
-            if (message[i] == alphabet[count2]) //Using counter to read each letter after the other then compare it to the alphabet positioning.
+            if (message[i] == alphabet[count2])     // Using counter to read each letter after the other then compare it to the alphabet positioning.
             {
-                message[i] = key[count2];
+                message[i] = key[count2];           // Message chars each become their position in the key.
             break;
             }
         }
